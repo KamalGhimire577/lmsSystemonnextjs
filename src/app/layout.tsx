@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Navbar from "./components/Navbar";
+import Navbar from "../components/Navbar";
+import Sessionwrapper from "@/components/SessionWrapper";
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,17 +26,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      {/* below was css body or tailwind css */}
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-       ><Navbar />
-        {/* here we can place the navbar */}
-        {/* below was the body part which is display dynamically as routing */}
-        {children}
+    <Sessionwrapper>
+      <html lang="en">
+        {/* below was css body or tailwind css */}
+        <body
+          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        >
+          <Navbar />
+          {/* here we can place the navbar */}
+          {/* below was the body part which is display dynamically as routing */}
+          {children}
 
-        {/* here we can place the footer */}
-      </body>
-    </html>
+          {/* here we can place the footer */}
+        </body>
+      </html>
+    </Sessionwrapper>
   );
 }
