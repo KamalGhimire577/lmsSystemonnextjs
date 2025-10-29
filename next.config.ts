@@ -3,7 +3,7 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   /* config options here */
 
-  /* google image config */
+  /* google image config */ /** jaha bat image aauxa tyo sab lai ya config garna parxa */
   reactStrictMode: true,
   images: {
     remotePatterns: [
